@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Solver</title>
+    <script src="static/main.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <section id="title">
+        <h1>Wordle Solver</h1>
+    </section>
+    <div id="root">
+        <div id="length-choice-container">
+            <h3>Quante lettere nella parola?</h3>
+            <div id=length-buttons>
+            </div>
+        </div>
+        <div id="good-letters-container">
+            <h3>Lettere corrette</h3>
+            <div id="solver-row">
+            </div>
+        </div>
+        <div id="bad-letters-container">
+            <h3>Lettere non presenti</h3>
+            <input type="text" id="bad-letters" class="free-input" placeholder="···">
+        </div>
+        <div id="search-container">
+            <button id="search-btn" onclick="submit()">ricerca</button>
+        </div>
+        <div id="results">
+            <h3>Parole possibili</h3>
+            <ul id="results"></ul>
+        </div>
+        <script>
+            createLengthButtons(4, 11);
+            setWordLength(5);
+        </script>
+</body>
+
+</html>

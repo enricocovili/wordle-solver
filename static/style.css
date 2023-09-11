@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(112, 112, 112);
+    color: white;
+}
+
+input,
+button {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* main div, all content is centered */
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+#title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#root>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+
+#solver-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrong-position {
+    background-color: gold;
+    color: black;
+}
+
+.correct-position,
+.length-btn.active {
+    background-color: green;
+    color: white;
+}
+
+input#bad-letters {
+    background-color: red;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+
+.letter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.letter-input {
+    border-radius: 10%;
+    padding: 0.5rem;
+    height: 50px;
+    width: 50px;
+    margin: 0.2rem;
+}
+
+.change-mode-btn {
+    font-size: 15px;
+    text-align: center;
+    width: 90%;
+    height: 20px;
+    border-radius: 10%;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0.2rem 0 0.2rem;
+}
+
+.length-btn {
+    border-radius: 5%;
+    background-color: darkseagreen;
+    border: none;
+    height: 30px;
+    width: 30px;
+    font-size: inherit;
+}
+
+#search-btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: aqua;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+ul#results {
+    list-style-type: none;
+    /* display results in a 5x{undefined} grid */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 1rem;
+    padding-left: 0;
+    text-align: center;
+}
+
+li.result {
+    background-color: darkslategrey;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+}
