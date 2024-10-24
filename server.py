@@ -61,7 +61,7 @@ def sanitize_input(good_letters: str, out_of_place_letters: str, bad_letters: st
 
 @app.get("/")
 def read_root():
-    return FileResponse("static/index.html", media_type="text/html")
+    return FileResponse("index.html", media_type="text/html")
 
 
 # "words" endpoint. should receive word lenght, letters with position and letters not present
