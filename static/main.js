@@ -114,9 +114,25 @@ function retrieveLetters() {
     badLetters = badLetters.split("").join(",");
 }
 
+function reset() {
+    var solverRow = document.getElementById("solver-row");
+    for (var i = 0; i < solverRow.children.length; i++) {
+        var input = document.getElementById("correct-input-" + i);
+        input.value = "";
+        var btn = document.getElementById("change-mode-btn-" + i);
+        btn.innerHTML = "✓";
+        btn.classList.remove("wrong-position");
+        btn.classList.add("correct-position");
+        input.classList.remove("wrong-position");
+        input.classList.add("correct-position");
+    }
+    document.getElementById("bad-letters").value = "";
+    document.getElementById("results-container").style.display = "none";
+}
+
 function submit() {
     retrieveLetters();
-    var url = "https://liuk3.ddns.net/wordle-solver/api/v1/words?" +
+    var url = "https://www.enricocovili.xyz/wordle-solver/api/v1/words?" +
         "length=" + word_length +
         "&good_letters=" + goodLetters +
         "&bad_letters=" + badLetters +
@@ -124,16 +140,17 @@ function submit() {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
     request.onload = function () {
+        document.getElementById("results-container").style.display = "block";
         var data = JSON.parse(this.response);
-        var wordList = document.getElementById("results");
-        wordList.innerHTML = "<ul></ul>";
-        ul = wordList.firstElementChild;
-        ul.setAttribute("id", "results");
+        var wordList = document.getElementById("result-word-list");
+        wordList.innerHTML = ""; // reset the list
+        // ul = wordList.firstElementChild;
+        // ul.setAttribute("id", "results");
         data["words"].forEach(word => {
             var li = document.createElement("li");
             li.setAttribute("class", "result");
             li.innerHTML = word;
-            wordList.firstElementChild.appendChild(li);
+            wordList.appendChild(li);
         });
     }
     request.send();

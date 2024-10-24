@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--    Se stai leggendo questa cosa, forse ti conviene guardare direttamente il codice su Github -->
+
+<!-- è open source :). https://github.com/enricocovili/wordle-solver -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle Solver</title>
     <script src="static/main.js"></script>
     <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -31,9 +36,12 @@
         <div id="search-container">
             <button id="search-btn" onclick="submit()">ricerca</button>
         </div>
-        <div id="results">
-            <h3>Parole possibili</h3>
-            <ul id="results"></ul>
+        <div id="results-container">
+            <h3>Possibili parole</h3>
+            <ul id="result-word-list"></ul>
+        </div>
+        <div id="reset-container">
+            <button id="reset-btn" onclick="reset()"><img src="static/recycle.svg"></button>
         </div>
         <script>
             createLengthButtons(4, 11);

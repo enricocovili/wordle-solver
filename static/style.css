@@ -115,7 +115,18 @@ input#bad-letters {
     border-radius: 10px;
 }
 
-ul#results {
+div#results-container {
+    text-transform: uppercase;
+    text-align: center;
+    display: none;
+}
+
+div#results-container>h3 {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+}
+
+ul#result-word-list {
     list-style-type: none;
     /* display results in a 5x{undefined} grid */
     display: grid;
@@ -133,4 +144,34 @@ li.result {
     font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
+}
+
+/* reset container and button. should be a floating button in the bottom-right of the page */
+#reset-container {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    margin: 2rem;
+}
+
+#reset-btn {
+    /* center every content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#reset-btn>img {
+    height: 40px;
+    width: 40px;
 }
